@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: use/restore-apps.html 
+keywords: restore app, restoring an app, restore an app, restore 
+summary: 'Astra permet de restaurer la configuration de vos applications et le stockage persistant à partir d"un snapshot ou d"une sauvegarde. Les sauvegardes de stockage persistant sont transférées depuis votre magasin d"objets. Ainsi, la restauration à partir d"une sauvegarde existante est effectuée le plus rapidement.' 
+---
+= Restaurez les applications
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control peut restaurer votre application à partir d'un snapshot ou d'une sauvegarde. La restauration d'un snapshot existant est plus rapide lors de la restauration d'une application sur le même cluster. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour restaurer des applications.
+
+
+NOTE: Lorsque vous effectuez une restauration sur place d'une application qui utilise un stockage NetApp ONTAP, l'espace utilisé par cette application peut doubler. Une fois la restauration sur place effectuée, supprimez les snapshots indésirables de l'application restaurée pour libérer de l'espace de stockage.
+
+.Description de la tâche
+* *Protéger vos applications d'abord*: Il est fortement recommandé de prendre un instantané de ou de sauvegarder votre application avant de la restaurer. Cela vous permettra de cloner à partir du snapshot ou de la sauvegarde en cas d'échec de la restauration.
+* *Vérifiez les volumes de destination* : si vous restaurez sur un autre cluster, assurez-vous que le cluster utilise le même mode d'accès aux volumes persistants (par exemple, ReadWriteMany). L'opération de restauration échoue si le mode d'accès au volume persistant de destination est différent.
+* *(clusters OpenShift uniquement) Ajouter des règles* : lorsque vous créez un projet pour héberger une application sur un cluster OpenShift, un UID SecurityContext est affecté au projet (ou à l'espace de noms Kubernetes). Pour permettre à Astra Control Center de protéger votre application et de la déplacer vers un autre cluster ou projet dans OpenShift, vous devez ajouter des règles qui permettent à l'application de s'exécuter comme un UID. Par exemple, les commandes OpenShift CLI suivantes octroient les règles appropriées à une application WordPress.
++
+`oc new-project wordpress`
+`oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
+`oc adm policy add-scc-to-user privileged -z default -n wordpress`
+
+* *Helm Deployed apps* : le clonage des applications déployées avec Helm 3 (ou mis à niveau de Helm 2 vers Helm 3) est entièrement pris en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
+
+
+.Étapes
+. Sélectionnez *applications*, puis le nom d'une application.
+. Sélectionnez *protection des données*.
+. Si vous souhaitez effectuer une restauration à partir d'un instantané, conservez l'icône *snapshots* sélectionnée. Sinon, sélectionnez l'icône *backups* pour restaurer à partir d'une sauvegarde.
+. Dans le menu Options de la colonne *actions* pour l'instantané ou la sauvegarde à partir duquel vous souhaitez restaurer, sélectionnez *Restaurer l'application*.
+. Choisissez le type de restauration :
++
+** *Restaurer les espaces de noms d'origine* : utilisez cette procédure pour restaurer l'app sur place dans le cluster d'origine.
++
+[CAUTION]
+====
+L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus. Toutes les ressources partagées entre les applications sont remplacées lorsqu'une restauration sur place est effectuée sur l'une des applications. Par exemple, le scénario suivant génère une situation indésirable lors de l'utilisation de la réplication NetApp SnapMirror :
+
+... Vous définissez l'application `app1` utilisation de l'espace de noms `ns1`.
+... Vous configurez une relation de réplication pour `app1`.
+... Vous définissez l'application `app2` (sur le même cluster) utilisant les namespaces `ns1` et `ns2`.
+... Vous configurez une relation de réplication pour `app2`.
+... La réplication est inversée pour `app2`. Ceci provoque le `app1` l'application sur le cluster source à désactiver.
+
+
+====
++
+... Sélectionnez le snapshot à utiliser pour restaurer l'application sur place, qui restaure l'application vers une version antérieure de lui-même.
+... Sélectionnez *Suivant*.
++
+
+NOTE: Si vous restaurez vers un espace de nom qui a déjà été supprimé, un nouvel espace de nom avec le même nom est créé dans le cadre du processus de restauration. Tous les utilisateurs disposant des droits de gestion des applications dans l'espace de noms précédemment supprimé doivent restaurer manuellement les droits sur l'espace de noms nouvellement créé.
+
+... Consultez les détails de l'action de restauration, saisissez "restaurer" et sélectionnez *Restaurer*.
+
+
+** *Restaurer vers de nouveaux espaces de noms* : utilisez cette procédure pour restaurer l'application vers un autre cluster ou avec des espaces de noms différents de la source.
++
+... Choisissez le cluster de destination pour l'application que vous souhaitez restaurer.
+... Entrez un espace de noms de destination pour chaque espace de noms source associé à l'application.
++
+
+NOTE: Astra Control crée de nouveaux espaces de noms de destination dans le cadre de cette option de restauration. Les espaces de noms de destination que vous spécifiez ne doivent pas être déjà présents sur le cluster de destination.
+
+... Sélectionnez *Suivant*.
+... Sélectionnez le snapshot à utiliser pour restaurer l'application.
+... Sélectionnez *Suivant*.
+... Consultez les détails de l'action de restauration et sélectionnez *Restaurer*.
+
+
+
+
+
+
+.Résultat
+Astra Control restaure l'application en fonction des informations que vous avez fournies. Si vous avez restauré l'application sur place, le contenu des volumes persistants existants est remplacé par le contenu des volumes persistants de l'application restaurée.
+
+
+NOTE: Après une opération de protection des données (clonage, sauvegarde ou restauration) et après le redimensionnement du volume persistant, la nouvelle taille du volume s'affiche dans l'interface utilisateur Web pendant vingt minutes. La protection des données fonctionne avec succès en quelques minutes et vous pouvez utiliser le logiciel de gestion pour le système back-end pour confirmer la modification de la taille du volume.
+
+
+IMPORTANT: Tout utilisateur membre aux contraintes de namespace par nom/ID d'espace de noms ou par libellés de namespace peut cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de son entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un espace de noms par une opération de clonage ou de restauration, l'administrateur/propriétaire du compte peut modifier le compte d'utilisateur membre et mettre à jour les contraintes de rôle pour l'utilisateur affecté afin d'autoriser l'accès au nouvel espace de noms.

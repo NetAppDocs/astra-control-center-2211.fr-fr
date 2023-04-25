@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: concepts/licensing.html 
+keywords: license, licensing 
+summary: 'Découvrez comment les actions que vous pouvez exécuter avec Astra Control Center diffèrent en fonction de l"état de la licence et comment votre utilisation d"Astra Control Center affecte la consommation de la licence.' 
+---
+= Licences
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Astra Control Center requiert l'installation d'une licence qui permet la mise en œuvre de la fonctionnalité complète de gestion des données d'application. Lorsque vous déployez Astra Control Center sans licence, une bannière s'affiche dans l'interface utilisateur Web, vous avertissant que la fonctionnalité du système est limitée.
+
+Vous obtenez une licence de l'une des manières suivantes :
+
+* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]. Une licence d'évaluation vous permet d'utiliser Astra Control Center pendant 90 jours à compter de la date de téléchargement de la licence.
+* link:https://mysupport.netapp.com/site/["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence NetApp (NLF)"^] Sur le site de support NetApp. Après avoir acheté le produit, vous recevez un numéro de série et une licence que vous utilisez sur le site de support.
+
+
+Pour plus d'informations sur les licences requises pour les systèmes de stockage back-end ONTAP, reportez-vous à la link:../get-started/requirements.html["systèmes back-end de stockage pris en charge"].
+
+
+NOTE: Il est possible d'ajouter un cluster, d'ajouter un compartiment et de gérer un système back-end sans licence.
+
+
+
+== Mode de calcul de la consommation des licences
+
+Lorsque vous ajoutez un nouveau cluster à Astra Control Center, il ne prend pas en compte les licences consommées tant qu'au moins une application exécutée sur le cluster est gérée par Astra Control Center.
+
+Lorsque vous commencez à gérer une application sur un cluster, toutes les unités CPU de ce cluster sont incluses dans la consommation de licence Astra Control Center.
+
+
+
+== Trouvez plus d'informations
+
+* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Ajoutez une licence lorsque vous configurez Astra Control Center pour la première fois"]
+* link:../use/update-licenses.html["Mettre à jour une licence existante"]
+

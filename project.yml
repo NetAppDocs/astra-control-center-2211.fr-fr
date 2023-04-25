@@ -1,0 +1,103 @@
+---
+settings:
+  name: Astra Control Center
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: release-notes/whats-new.html
+  versions:
+  - name: Centre de contrôle Astra
+    url: "/astra-control-center"
+    version-number: '22.11'
+  - name: Centre de contrôle Astra
+    url: "/astra-control-center-2208"
+    version-number: '22.08'
+  - name: Centre de contrôle Astra
+    url: "/astra-control-center-2204"
+    version-number: '22.04'
+  - name: Centre de contrôle Astra
+    url: "/astra-control-center-2112"
+    version-number: '21.12'
+  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es
+sidebar:
+  entries:
+  - title: Documentation Astra Control Center 22.11
+    url: "/index.html"
+  - section: release-notes
+  - section: get-started
+  - section: concepts
+  - section: use
+  - section: rest-api
+  - section: support
+  - title: Versions antérieures
+    url: "/acc-earlier-versions.html"
+  - title: Mentions légales
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: Commencez avec Astra Control Center
+    links:
+    - title: Découvrez Astra Control Center
+      url: "/get-started/intro.html"
+    - title: Nouveautés d'Astra Control Center
+      url: "/release-notes/whats-new.html"
+    - title: Notes de mise à jour
+      url: "/release-notes/rn_overview.html"
+    - title: Essayez-le
+      url: "/get-started/quick-start.html"
+    - title: Poser le centre de contrôle Astra
+      url: "/get-started/install_acc.html"
+  - title: Utilisez Astra Control Center
+    links:
+    - title: Gestion des comptes
+      url: "/use/manage-local-users-and-roles.html"
+    - title: Gérer des applications
+      url: "/use/manage-apps.html"
+    - title: Protégez vos applications
+      url: "/use/protect-apps.html"
+    - title: Cloner et migrer les applications
+      url: "/use/clone-apps.html"
+    - title: Réplication d'applications vers un système distant
+      url: "/use/replicate_snapmirror.html"
+  - title: Avec l'API REST d'Astra Control
+    links:
+    - title: Commencez avec l'API Astra Control
+      url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
+    - title: Référence API
+      url: https://docs.netapp.com/us-en/astra-automation/reference/overview.html
+    - title: Workflows API
+      url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
+  - title: Utilisez le service Astra Control
+    links:
+    - title: Découvrez le service Astra Control
+      url: https://docs.netapp.com/us-en/astra/get-started/intro.html
+    - title: Nouveautés du service Astra Control
+      url: https://docs.netapp.com/us-en/astra/release-notes/whats-new.html
+    - title: Démarrage rapide pour le service Astra Control
+      url: https://docs.netapp.com/us-en/astra/get-started/quick-start.html
+  - title: Descriptions de solutions
+    links:
+    - title: DBaaS avec Astra Control
+      url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
+    - title: MySQL DBaaS avec Astra Control
+      url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
+    - title: Simplifiez la gestion du cycle de vie Jenkins
+      url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
+  - title: Blogs et communauté
+    links:
+    - title: Déroulez le canal
+      url: https://discord.gg/NetApp
+    - title: Blog Astra Control
+      url: https://cloud.netapp.com/blog/topic/astra
+    - title: Communauté NetApp
+      url: https://community.netapp.com/
+    - title: Kubernetes Hub
+      url: https://cloud.netapp.com/kubernetes-hub
+    - title: Où obtenir de l'aide
+      url: "/support/get-help.html"
+product-family:
+  name: Astra
+  repo: astra-family
+  sidebar_label: Toute la documentation Astra
