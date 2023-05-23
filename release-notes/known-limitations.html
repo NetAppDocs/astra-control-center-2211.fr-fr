@@ -42,6 +42,7 @@
   <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-center-2211/release-notes/known-limitations.html" />
   <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-center-2211/release-notes/known-limitations.html" />
   <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-center-2211/release-notes/known-limitations.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-center-2211/release-notes/known-limitations.html" />
   <link rel='stylesheet' href='/fr-fr/astra-control-center-2211/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -214,7 +215,7 @@
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/issues/new?body=Page%3A%20[Limites connues](https://docs.netapp.com/fr-fr/astra-control-center-2211/release-notes/known-limitations.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/blob/main/release-notes/known-limitations.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center-2211/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211.fr-fr/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/fr-fr/astra-control-center-2211/release-notes/known-limitations.html&page-title=Limites connues" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/blob/main/release-notes/known-limitations.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center-2211/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -307,8 +308,8 @@
           data-did-you-mean="Rechercher {suggestion}."
           data-no-results-found-did-you-mean="Aucun résultat n’a été trouvé pour {query}. Voulez-vous dire {suggestion} ?"
           data-results-found="{hitCount} résultats trouvés"
-          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
-          data-error-reset="Reset Search"
+          data-error-message="Nous sommes désolés, mais un problème s'est produit lors de la récupération de vos résultats. Merci de réessayer."
+          data-error-reset="Réinitialiser la recherche"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -349,6 +350,8 @@
           <a href="https://docs.netapp.com/de-de/astra-control-center-2211/release-notes/known-limitations.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/es-es/astra-control-center-2211/release-notes/known-limitations.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/it-it/astra-control-center-2211/release-notes/known-limitations.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -1309,10 +1312,10 @@
 <div class="title">Limites du contrôle d&#8217;accès basé sur des rôles (RBAC)</div>
 <ul>
 <li>
-<p><a href="Un utilisateur doté de contraintes RBAC d&.html#8217;espace de noms peut ajouter et annuler la gestion d&#8217;un cluster">Un utilisateur doté de contraintes RBAC d&.html</a></p>
+<p><a href="#un-utilisateur-doté-de-contraintes-rbac-despace-de-noms-peut-ajouter-et-annuler-la-gestion-dun-cluster">Un utilisateur doté de contraintes RBAC d&#8217;espace de noms peut ajouter et annuler la gestion d&#8217;un cluster</a></p>
 </li>
 <li>
-<p><a href="Un membre avec des contraintes d&.html#8217;espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n&#8217;ajoute pas l&#8217;espace de noms à la contrainte">Un membre avec des contraintes d&.html</a></p>
+<p><a href="#un-membre-avec-des-contraintes-despace-de-noms-ne-peut-pas-accéder-aux-applications-clonées-ou-restaurées-tant-que-admin-najoute-pas-lespace-de-noms-à-la-contrainte">Un membre avec des contraintes d&#8217;espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n&#8217;ajoute pas l&#8217;espace de noms à la contrainte</a></p>
 </li>
 </ul>
 </div>
@@ -1323,16 +1326,16 @@
 <p><a href="#De même">vous ne pouvez pas restaurer collectivement plusieurs applications dans un autre espace de noms</a></p>
 </li>
 <li>
-<p><a href="Astra Control n&.html#8217;attribue pas automatiquement de compartiments par défaut pour les instances de cloud">Astra Control n&.html</a></p>
+<p><a href="#astra-control-nattribue-pas-automatiquement-de-compartiments-par-défaut-pour-les-instances-de-cloud">Astra Control n&#8217;attribue pas automatiquement de compartiments par défaut pour les instances de cloud</a></p>
 </li>
 <li>
-<p><a href="Les clones des applications installées à l&.html#8217;aide d&#8217;opérateurs pass-by-Reference peuvent échouer">Les clones des applications installées à l&.html</a></p>
+<p><a href="#les-clones-des-applications-installées-à-laide-dopérateurs-pass-by-reference-peuvent-échouer">Les clones des applications installées à l&#8217;aide d&#8217;opérateurs pass-by-Reference peuvent échouer</a></p>
 </li>
 <li>
 <p><a href="#les-opérations-de-restauration-sur-place-des-applications-qui-utilisent-un-gestionnaire-de-certificats-ne-sont-pas-prises-en-charge">Les opérations de restauration sur place des applications qui utilisent un gestionnaire de certificats ne sont pas prises en charge</a></p>
 </li>
 <li>
-<p><a href="Applications activées par OLM et déployées par l&.html#8217;opérateur à étendue de cluster non prises en charge">Applications activées par OLM et déployées par l&.html</a></p>
+<p><a href="#applications-activées-par-olm-et-déployées-par-lopérateur-à-étendue-de-cluster-non-prises-en-charge">Applications activées par OLM et déployées par l&#8217;opérateur à étendue de cluster non prises en charge</a></p>
 </li>
 <li>
 <p><a href="#les-applications-déployées-avec-helm-2-ne-sont-pas-prises-en-charge">Les applications déployées avec Helm 2 ne sont pas prises en charge</a></p>
@@ -1343,7 +1346,7 @@
 <div class="title">Limitations générales</div>
 <ul>
 <li>
-<p><a href="Les compartiments S3 du centre de contrôle Astra n&.html#8217;indiquent pas la capacité disponible">Les compartiments S3 du centre de contrôle Astra n&.html</a></p>
+<p><a href="#les-compartiments-s3-du-centre-de-contrôle-astra-nindiquent-pas-la-capacité-disponible">Les compartiments S3 du centre de contrôle Astra n&#8217;indiquent pas la capacité disponible</a></p>
 </li>
 <li>
 <p><a href="#astra-control-center-ne-valide-pas-les-détails-que-vous-entrez-pour-votre-serveur-proxy">Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy</a></p>
@@ -1352,10 +1355,10 @@
 <p><a href="#les-connexions-existantes-à-un-pod-postgres-provoquent-des-défaillances">Les connexions existantes à un pod Postgres provoquent des défaillances</a></p>
 </li>
 <li>
-<p><a href="Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d&.html#8217;une instance Astra Control Center">Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d&.html</a></p>
+<p><a href="#il-est-possible-que-les-sauvegardes-et-les-snapshots-ne-soient-pas-conservés-lors-du-retrait-dune-instance-astra-control-center">Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d&#8217;une instance Astra Control Center</a></p>
 </li>
 <li>
-<p><a href="Limitations de l&.html#8217;utilisateur et du groupe LDAP">Limitations de l&.html</a></p>
+<p><a href="#limitations-de-lutilisateur-et-du-groupe-ldap">Limitations de l&#8217;utilisateur et du groupe LDAP</a></p>
 </li>
 </ul>
 </div>

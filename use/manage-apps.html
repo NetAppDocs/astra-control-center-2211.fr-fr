@@ -42,6 +42,7 @@
   <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-center-2211/use/manage-apps.html" />
   <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-center-2211/use/manage-apps.html" />
   <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-center-2211/use/manage-apps.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-center-2211/use/manage-apps.html" />
   <link rel='stylesheet' href='/fr-fr/astra-control-center-2211/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -214,7 +215,7 @@
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/issues/new?body=Page%3A%20[Commencez à gérer les applications](https://docs.netapp.com/fr-fr/astra-control-center-2211/use/manage-apps.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/blob/main/use/manage-apps.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center-2211/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211.fr-fr/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/fr-fr/astra-control-center-2211/use/manage-apps.html&page-title=Commencez à gérer les applications" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center-2211/blob/main/use/manage-apps.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center-2211/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center-2211/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -307,8 +308,8 @@
           data-did-you-mean="Rechercher {suggestion}."
           data-no-results-found-did-you-mean="Aucun résultat n’a été trouvé pour {query}. Voulez-vous dire {suggestion} ?"
           data-results-found="{hitCount} résultats trouvés"
-          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
-          data-error-reset="Reset Search"
+          data-error-message="Nous sommes désolés, mais un problème s'est produit lors de la récupération de vos résultats. Merci de réessayer."
+          data-error-reset="Réinitialiser la recherche"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -349,6 +350,8 @@
           <a href="https://docs.netapp.com/de-de/astra-control-center-2211/use/manage-apps.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/es-es/astra-control-center-2211/use/manage-apps.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/it-it/astra-control-center-2211/use/manage-apps.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -1443,7 +1446,7 @@ Pour K8ssandra, les opérations de restauration sur place sont prises en charge.
 <h2 id="définir-les-applications">Définir les applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Une fois qu&#8217;Astra Control détecte les espaces de noms sur vos clusters, vous pouvez définir les applications que vous souhaitez gérer. Vous pouvez choisir <a href="Définissez les ressources à gérer en tant qu&.html#8217;application">gérer une application couvrant un ou plusieurs espaces de noms</a> ou <a href="Définissez un espace de noms à gérer en tant qu&.html#8217;application">gérer la totalité d&#8217;un namespace comme une seule application</a>. La granularité est en effet au niveau de granularité requis pour les opérations de protection des données.</p>
+<p>Une fois qu&#8217;Astra Control détecte les espaces de noms sur vos clusters, vous pouvez définir les applications que vous souhaitez gérer. Vous pouvez choisir <a href="#définissez-les-ressources-à-gérer-en-tant-quapplication">gérer une application couvrant un ou plusieurs espaces de noms</a> ou <a href="#définissez-un-espace-de-noms-à-gérer-en-tant-quapplication">gérer la totalité d&#8217;un namespace comme une seule application</a>. La granularité est en effet au niveau de granularité requis pour les opérations de protection des données.</p>
 </div>
 <div class="paragraph">
 <p>Bien qu&#8217;Astra Control vous permet de gérer séparément les deux niveaux de la hiérarchie (l&#8217;espace de noms et les applications dans cet espace de noms ou les espaces de noms d&#8217;extension), il est recommandé de choisir l&#8217;un ou l&#8217;autre. Les actions que vous prenez dans Astra Control peuvent échouer si les actions ont lieu en même temps au niveau de l&#8217;espace de noms et de l&#8217;application.</p>
@@ -1467,7 +1470,7 @@ Par exemple, vous pouvez définir une stratégie de sauvegarde pour « maria » 
 <p>Un cluster Kubernetes ajouté à Astra Control.</p>
 </li>
 <li>
-<p>Une ou plusieurs applications installées sur le cluster. <a href="Méthodes d&.html#8217;installation d&#8217;applications prises en charge">En savoir plus sur les méthodes d&#8217;installation d&#8217;applications prises en charge</a>.</p>
+<p>Une ou plusieurs applications installées sur le cluster. <a href="#méthodes-dinstallation-dapplications-prises-en-charge">En savoir plus sur les méthodes d&#8217;installation d&#8217;applications prises en charge</a>.</p>
 </li>
 <li>
 <p>Un ou plusieurs pods actifs.</p>
@@ -1510,10 +1513,10 @@ Une étiquette est une paire clé/valeur que vous pouvez attribuer aux objets Ku
 <div class="title">Options de gestion des applications</div>
 <ul>
 <li>
-<p><a href="Définissez les ressources à gérer en tant qu&.html#8217;application">Définissez les ressources à gérer en tant qu&.html</a></p>
+<p><a href="#définissez-les-ressources-à-gérer-en-tant-quapplication">Définissez les ressources à gérer en tant qu&#8217;application</a></p>
 </li>
 <li>
-<p><a href="Définissez un espace de noms à gérer en tant qu&.html#8217;application">Définissez un espace de noms à gérer en tant qu&.html</a></p>
+<p><a href="#définissez-un-espace-de-noms-à-gérer-en-tant-quapplication">Définissez un espace de noms à gérer en tant qu&#8217;application</a></p>
 </li>
 </ul>
 </div>
@@ -1772,7 +1775,7 @@ Pour afficher les détails d&#8217;une application particulière, sélectionnez 
 <img src="/us-en/astra-control-center-2211/images/tip.svg" alt="Astuce">
 </td>
 <td class="content">
-Si vous souhaitez définir plusieurs applications, sélectionnez dans la liste Namespaces et sélectionnez le bouton <strong>actions</strong> dans le coin supérieur gauche et sélectionnez <strong>définir comme application</strong>. Cela définira plusieurs applications individuelles dans leurs espaces de noms individuels. Pour les applications à espace de noms multiples, voir <a href="Définissez les ressources à gérer en tant qu&.html#8217;application">Définissez les ressources à gérer en tant qu&.html</a>.
+Si vous souhaitez définir plusieurs applications, sélectionnez dans la liste Namespaces et sélectionnez le bouton <strong>actions</strong> dans le coin supérieur gauche et sélectionnez <strong>définir comme application</strong>. Cela définira plusieurs applications individuelles dans leurs espaces de noms individuels. Pour les applications à espace de noms multiples, voir <a href="#définissez-les-ressources-à-gérer-en-tant-quapplication">Définissez les ressources à gérer en tant qu&#8217;application</a>.
 </td>
 </tr>
 </table>
